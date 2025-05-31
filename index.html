@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Python Developer</title>
     <style>
+        :root {
+            /* カラーパレット */
+            --primary-color: #37352f;
+            --accent-color: #ff6200;
+            --text-light: #ffffff;
+            --text-dark: #2c2c2c;
+            --shadow-color: rgba(0,0,0,0.05);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -252,15 +261,70 @@
             list-style: none;
         }
 
-        .skill-list li {
-            margin-bottom: 10px;
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 8px 12px;
             background: #ffffff;
             border-radius: 6px;
             border: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item-header:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .skill-item-content {
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .skill-arrow {
+            font-size: 0.8rem;
+            color: #6b6b6b;
+            transition: transform 0.3s ease;
+            margin-left: 8px;
+        }
+
+        .skill-arrow.expanded {
+            transform: rotate(180deg);
+        }
+
+        .skill-description {
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            padding: 15px;
+            color: #37352f;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .skill-description.expanded {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: -1px;
+        }
+
+        .skill-item.expanded .skill-item-header {
+            border-radius: 6px 6px 0 0;
+            background: #f8f8f8;
+            border-bottom: 1px solid #e8e8e8;
         }
 
         /* Projects Section */
@@ -302,6 +366,8 @@
             color: #6b6b6b;
             margin-bottom: 20px;
             line-height: 1.6;
+            transition: all 0.3s ease;
+            min-height: 60px;
         }
 
         .project-tech {
@@ -318,6 +384,15 @@
             border-radius: 6px;
             font-size: 0.9rem;
             border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: #37352f;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         .project-links {
@@ -327,18 +402,23 @@
 
         .project-link {
             padding: 10px 20px;
-            background: #37352f;
-            color: #ffffff;
+            background: var(--primary-color);
+            color: var(--text-light);
             text-decoration: none;
             border-radius: 6px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
+            border: 1px solid var(--accent-color);
         }
 
         .project-link:hover {
-            background: #2c2c2c;
+            background: var(--accent-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            border-color: var(--primary-color);
         }
 
         /* Contact Section */
@@ -510,25 +590,55 @@
                 <div class="skill-category">
                     <h3><span class="big-emoji">📚</span>Programming Languages</h3>
                     <ul class="skill-list">
-                        <li><span class="big-emoji">🔹</span>Python</li>
-                        <li><span class="big-emoji">🔸</span>JavaScript</li>
+                        <li class="skill-item">
+                            <div class="skill-item-header">
+                                <div class="skill-item-content">
+                                    <span class="big-emoji">🔹</span>Python
+                                </div>
+                                <span class="skill-arrow">▼</span>
+                            </div>
+                            <div class="skill-description">
+                                データサイエンス、ライブラリ作成に特化。2年以上の経験があり、NumPy、Pandas、Flaskなどの主要ライブラリを使いこなしています。
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-item-header">
+                                <div class="skill-item-content">
+                                    <span class="big-emoji">🔸</span>JavaScript
+                                </div>
+                                <span class="skill-arrow">▼</span>
+                            </div>
+                            <div class="skill-description">
+                                JavaScript 1日目
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <!-- <div class="skill-category">
-                    <h3>📚 Libraries & Frameworks</h3>
-                    <ul class="skill-list">
-                        <li><span>⚡</span>FastAPI</li>
-                        <li><span>🌐</span>Django</li>
-                        <li><span>🔬</span>NumPy</li>
-                        <li><span>🐼</span>Pandas</li>
-                        <li><span>🧪</span>pytest</li>
-                    </ul>
-                </div> -->
                 <div class="skill-category">
                     <h3><span class="big-emoji">🔧</span>Tools & Technologies</h3>
                     <ul class="skill-list">
-                        <li><span class="big-emoji">💾</span>Git & GitHub</li>
-                        <li><span class="big-emoji">📦</span>PyPI</li>
+                        <li class="skill-item">
+                            <div class="skill-item-header">
+                                <div class="skill-item-content">
+                                    <span class="big-emoji">💾</span>Git & GitHub
+                                </div>
+                                <span class="skill-arrow">▼</span>
+                            </div>
+                            <div class="skill-description">
+                                バージョン管理とコラボレーション開発のメインツール。オープンソースプロジェクトへの貢献経験があります。
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-item-header">
+                                <div class="skill-item-content">
+                                    <span class="big-emoji">📦</span>PyPI
+                                </div>
+                                <span class="skill-arrow">▼</span>
+                            </div>
+                            <div class="skill-description">
+                                Pythonパッケージの公開・配布プラットフォーム。自作ライブラリをパッケージ化して公開し、setup.pyやpyproject.tomlの設定を適切に行っています。
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -546,15 +656,15 @@
                             <h3><span class="big-emoji">🗺️</span>setprintライブラリ開発</h3>
                             <span>✨</span>
                         </div>
-                        <p class="project-description">
-                            このライブラリはNumPy配列や2Dデータ (画像データ含む)も適切に整形できる 強力なデータ整形ツールです｡
+                        <p class="project-description" id="setprint-description">
+                            このライブラリは NumPy配列や2Dデータ(画像データ含む) も適切に整形できる 強力なデータ整形ツールです｡<br>
                             特に､ 配列の欠落や次元違いが発生しているデータの視認性を向上 させ､ 空間異常の早期発見を可能にします｡
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">pytest</span>
-                            <span class="tech-tag">Selenium</span>
-                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag" data-keyword="python">Python</span>
+                            <span class="tech-tag" data-keyword="data-structure">data structur</span>
+                            <span class="tech-tag" data-keyword="debugging">debugging</span>
+                            <span class="tech-tag" data-keyword="github-actions">GitHub Actions</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/mtur2007/SetPrint" class="project-link">
@@ -650,27 +760,58 @@
             });
         });
 
-        // Add typing effect to hero text (optional)
-        function typeWriter(element, text, speed = 50) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
+        // スキル項目の展開・折りたたみ機能
+        document.querySelectorAll('.skill-item-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const skillItem = this.parentElement;
+                const arrow = this.querySelector('.skill-arrow');
+                const description = skillItem.querySelector('.skill-description');
+                
+                // 展開状態をトグル
+                const isExpanded = skillItem.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    // 折りたたみ
+                    skillItem.classList.remove('expanded');
+                    arrow.classList.remove('expanded');
+                    description.classList.remove('expanded');
+                } else {
+                    // 展開
+                    skillItem.classList.add('expanded');
+                    arrow.classList.add('expanded');
+                    description.classList.add('expanded');
                 }
-            }
-            
-            type();
-        }
+            });
+        });
 
-        // Initialize typing effect (uncomment if desired)
-        // window.addEventListener('load', () => {
-        //     const heroTitle = document.querySelector('.hero h1');
-        //     typeWriter(heroTitle, 'Your Name', 100);
-        // });
+        // プロジェクトのtech-tagホバー時の説明文変更機能
+        const projectDescriptions = {
+            'python': 'Pythonを使用してNumPy配列の効率的な処理とメモリ最適化を実装。型ヒントとdocstringを活用した保守性の高いコード設計を採用しています。',
+            'data-structure': '複雑な多次元配列や不規則なデータ構造を統一的に処理する仕組みを構築。配列の欠損部分や次元の不整合を自動検出・可視化します。',
+            'debugging': 'データの異常箇所を素早く特定できるデバッグ支援機能を提供。配列の形状やデータ型の不一致を視覚的に表示し、開発効率を向上させます。',
+            'github-actions': '自動テスト、PyPIへの自動デプロイ、コード品質チェックを統合。継続的インテグレーションにより、安定したライブラリリリースを実現しています。'
+        };
+
+        const originalDescription = document.getElementById('setprint-description').innerHTML;
+
+        document.querySelectorAll('.tech-tag[data-keyword]').forEach(tag => {
+            const keyword = tag.getAttribute('data-keyword');
+            const descriptionElement = document.getElementById('setprint-description');
+
+            tag.addEventListener('mouseenter', function() {
+                if (projectDescriptions[keyword]) {
+                    descriptionElement.innerHTML = projectDescriptions[keyword];
+                    descriptionElement.style.color = '#37352f';
+                    descriptionElement.style.fontWeight = '500';
+                }
+            });
+
+            tag.addEventListener('mouseleave', function() {
+                descriptionElement.innerHTML = originalDescription;
+                descriptionElement.style.color = '#6b6b6b';
+                descriptionElement.style.fontWeight = 'normal';
+            });
+        });
     </script>
 </body>
 </html>
