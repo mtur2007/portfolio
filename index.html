@@ -11,6 +11,14 @@
             box-sizing: border-box;
         }
 
+        /* 絵文字のスタイル */
+        .big-emoji {
+            font-size: 1.5em;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -83,13 +91,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 20px;
+            padding: 15px 30px;
             background: #f8f8f8;
             color: #37352f;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: all 0.3s ease;
             border: 1px solid #e0e0e0;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
         .social-link:hover {
@@ -435,7 +445,7 @@
                 <p>Python Developer & Library Creator</p>
                 <div class="social-links">
                     <a href="https://github.com/mtur2007" class="social-link">
-                        <span>🐙</span> GitHub
+                        <span class="big-emoji">🏡</span>GitHub
                     </a>
                     
                 </div>
@@ -457,7 +467,7 @@
             </h2>
             <div class="about-content">
                 <div class="about-info">
-                    <h3>📊 Profile</h3>
+                    <h3><span>📊</span>Profile</h3>
                     <div class="info-item">
                         <span>🎓</span>
                         <span>Computer Science Student</span>
@@ -471,18 +481,20 @@
                         <span>Python Specialist</span>
                     </div>
                     <div class="info-item">
-                        <span>📚</span>
+                        <span>📙</span>
                         <span>Library Developer</span>
                     </div>
                 </div>
                 <div class="about-text">
                     <p>
-                        コンピューターサイエンスを学ぶ学生として、Pythonライブラリの開発に情熱を注いでいます。
-                        オープンソースプロジェクトへの貢献を通じて、多くの開発者が使えるツールを作ることに喜びを感じています。
+                        コンピューターサイエンスを学ぶ学生として、<br>
+                        Pythonライブラリの開発に情熱を注いでいます。<br>
+                        オープンソースプロジェクトへの貢献を通じて、<br>
+                        新規性と実用性のあるツールを作ることに喜びを感じています。
                     </p>
                     <p>
-                        効率的でスケーラブルなソリューションの構築に焦点を当て、
-                        コードの品質と保守性を重視した開発を心がけています。
+                        効率的でスケーラブルなソリューションの構築に焦点を当て、<br>
+                        コードの品質と保守性を重視した開発を心がけています。<br>
                         常に新しい技術を学び、より良いソフトウェアを作ることを目指しています。
                     </p>
                 </div>
@@ -496,10 +508,10 @@
             </h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>🐍 Programming Languages</h3>
+                    <h3><span class="big-emoji">📚</span>Programming Languages</h3>
                     <ul class="skill-list">
-                        <li><span>🔹</span>Python (Advanced)</li>
-                        <li><span>🔸</span>JavaScript</li>
+                        <li><span class="big-emoji">🔹</span>Python</li>
+                        <li><span class="big-emoji">🔸</span>JavaScript</li>
                     </ul>
                 </div>
                 <!-- <div class="skill-category">
@@ -513,10 +525,10 @@
                     </ul>
                 </div> -->
                 <div class="skill-category">
-                    <h3>🔧 Tools & Technologies</h3>
+                    <h3><span class="big-emoji">🔧</span>Tools & Technologies</h3>
                     <ul class="skill-list">
-                        <li><span>🐙</span>Git & GitHub</li>
-                        <li><span>📦</span>pypi</li>
+                        <li><span class="big-emoji">💾</span>Git & GitHub</li>
+                        <li><span class="big-emoji">📦</span>PyPI</li>
                     </ul>
                 </div>
             </div>
@@ -531,12 +543,12 @@
                 <div class="project">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3>🗺️ setprintライブラリ開発</h3>
+                            <h3><span class="big-emoji">🗺️</span>setprintライブラリ開発</h3>
                             <span>✨</span>
                         </div>
                         <p class="project-description">
-                            このライブラリはNumPy配列や2Dデータ（画像データ含む）も適切に整形できる 強力なデータ整形ツールです。
-                            特に、配列の欠落や次元違いが発生しているデータの視認性を向上 させ、デバッグを容易にする機能を備えています。
+                            このライブラリはNumPy配列や2Dデータ (画像データ含む)も適切に整形できる 強力なデータ整形ツールです｡
+                            特に､ 配列の欠落や次元違いが発生しているデータの視認性を向上 させ､ 空間異常の早期発見を可能にします｡
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
@@ -546,10 +558,10 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/mtur2007/SetPrint" class="project-link">
-                                <span>🐙</span> GitHub
+                                <span class="big-emoji">🏭</span>GitHub
                             </a>
                             <a href="https://colab.research.google.com/drive/1Qs3xgB7pWxmOPtsWonyj29r1VMDwo6KF?usp=sharing" class="project-link">
-                                <span>📊</span> Test Results
+                                <span class="big-emoji">⛺️</span>Test Results
                             </a>
                         </div>
                     </div>
