@@ -524,10 +524,9 @@
                 <h1>mtur2007</h1>
                 <p>Python Developer & Library Creator</p>
                 <div class="social-links">
-                    <a href="https://github.com/mtur2007" class="social-link">
+                    <a href="https://github.com/mtur2007" class="social-link" target="_blank" rel="noopener noreferrer">
                         <span class="big-emoji">🏡</span>GitHub
                     </a>
-                    
                 </div>
             </div>
         </header>
@@ -563,6 +562,10 @@
                     <div class="info-item">
                         <span>📙</span>
                         <span>Library Developer</span>
+                    </div>
+                    <div class="info-item">
+                        <span>🎮</span>
+                        <span>Game Developer</span>
                     </div>
                 </div>
                 <div class="about-text">
@@ -609,7 +612,7 @@
                                 <span class="skill-arrow">▼</span>
                             </div>
                             <div class="skill-description">
-                                JavaScript 1日目
+                                Webサイトの作成、3Dゲームの開発でJavaScriptを活用しています。
                             </div>
                         </li>
                     </ul>
@@ -664,14 +667,38 @@
                             <span class="tech-tag" data-keyword="python">Python</span>
                             <span class="tech-tag" data-keyword="data-structure">data structur</span>
                             <span class="tech-tag" data-keyword="debugging">debugging</span>
-                            <span class="tech-tag" data-keyword="github-actions">GitHub Actions</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/mtur2007/SetPrint" class="project-link">
+                            <a href="https://github.com/mtur2007/SetPrint" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span class="big-emoji">🏭</span>GitHub
                             </a>
-                            <a href="https://colab.research.google.com/drive/1Qs3xgB7pWxmOPtsWonyj29r1VMDwo6KF?usp=sharing" class="project-link">
-                                <span class="big-emoji">⛺️</span>Test Results
+                            <a href="https://colab.research.google.com/drive/1Qs3xgB7pWxmOPtsWonyj29r1VMDwo6KF?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <span class="big-emoji">⛺️</span>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3><span class="big-emoji">🏙️🌃</span>3Dゲーム開発</h3>
+                            <span>✨</span>
+                        </div>
+                        <p class="project-description" id="three-description">
+                            このプロジェクトでは3Dで鉄道模型を鑑賞できるゲームのリリースを目指して、現在開発中です。<br>
+                            プログラミング技術を使い物体に対して動的なアニミーションを実行させることを重視しています。
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag" data-keyword="javascript">JavaScript</span>
+                            <span class="tech-tag" data-keyword="three.js">three.js</span>
+                            <span class="tech-tag" data-keyword="city">City</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mtur2007.github.io/java_three_3D/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <span class="big-emoji">🛤️</span>Diorama_Demo
+                            </a>
+                            <a href="https://mtur2007.github.io/java_three_3D_EditMode" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <span class="big-emoji">🌃</span>City_Demo
                             </a>
                         </div>
                     </div>
@@ -786,10 +813,9 @@
 
         // プロジェクトのtech-tagホバー時の説明文変更機能
         const projectDescriptions = {
-            'python': 'Pythonを使用してNumPy配列の効率的な処理とメモリ最適化を実装。型ヒントとdocstringを活用した保守性の高いコード設計を採用しています。',
+            'python': 'Pythonを使用してNumPy配列の効率的な処理とメモリ最適化を実装。開発には保守性の高いコード設計を採用しています。',
             'data-structure': '複雑な多次元配列や不規則なデータ構造を統一的に処理する仕組みを構築。配列の欠損部分や次元の不整合を自動検出・可視化します。',
             'debugging': 'データの異常箇所を素早く特定できるデバッグ支援機能を提供。配列の形状やデータ型の不一致を視覚的に表示し、開発効率を向上させます。',
-            'github-actions': '自動テスト、PyPIへの自動デプロイ、コード品質チェックを統合。継続的インテグレーションにより、安定したライブラリリリースを実現しています。'
         };
 
         const originalDescription = document.getElementById('setprint-description').innerHTML;
@@ -810,6 +836,34 @@
                 descriptionElement.innerHTML = originalDescription;
                 descriptionElement.style.color = '#6b6b6b';
                 descriptionElement.style.fontWeight = 'normal';
+            });
+        });
+
+        // プロジェクトのtech-tagホバー時の説明文変更機能
+        const ja_projectDescriptions = {
+            'javascript': 'Webサイトにて簡単に動かせる利点を活かし、インストール不要でURLのクリックでプレイができるゲームとして開発しています。',
+            'three.js': 'JavaScriptで3D描画が可能なライブラリ、three.jsを使い、現実では不可能な位置と角度からの鑑賞を可能にすることで新鮮で没入感のあるジオラマを作成しています。',
+            'city': '鉄道が走る風景を忠実に再現する為、夜と昼の切り替え、ホームドアやビルなど都市に存在する物体、建物を描画することで、ゲームとして見劣りしないクオリティーを目指しています。',
+        };
+
+        const ja_originalDescription = document.getElementById('three-description').innerHTML;
+
+        document.querySelectorAll('.tech-tag[data-keyword]').forEach(tag => {
+            const keyword = tag.getAttribute('data-keyword');
+            const three_descriptionElement = document.getElementById('three-description');
+
+            tag.addEventListener('mouseenter', function() {
+                if (ja_projectDescriptions[keyword]) {
+                    three_descriptionElement.innerHTML = ja_projectDescriptions[keyword];
+                    three_descriptionElement.style.color = '#37352f';
+                    three_descriptionElement.style.fontWeight = '500';
+                }
+            });
+
+            tag.addEventListener('mouseleave', function() {
+                three_descriptionElement.innerHTML = ja_originalDescription;
+                three_descriptionElement.style.color = '#6b6b6b';
+                three_descriptionElement.style.fontWeight = 'normal';
             });
         });
     </script>
